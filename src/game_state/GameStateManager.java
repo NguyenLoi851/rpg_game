@@ -6,17 +6,13 @@ public class GameStateManager {
 	private GameState[] gameStates;
 	private int curState;
 	public static int blood_fall = 0;
+
 	public GameStateManager() {
-		gameStates = new GameState[] {
-				new MainMenu(this),
-				null,
-				new PauseMenu(this),
-				new GameOverMenu(this),
-				new DaoLyMenu(this),
-				null
-		};
+		gameStates = new GameState[] { new MainMenu(this), null, new PauseMenu(this), new GameOverMenu(this),
+				new DaoLyMenu(this), null };
 		curState = 0;
 	}
+
 	public void Loop() {
 
 		gameStates[curState].Loop();
@@ -52,5 +48,3 @@ public class GameStateManager {
 		this.gameStates[curState] = gameState;
 	}
 }
-
-

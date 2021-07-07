@@ -12,53 +12,60 @@ public class Room {
 	private Tile[][] tiles;
 	private ArrayList<Enemy> entities;
 	private Player player;
+
 	public Player GetPlayer() {
 		return player;
 	}
+
 	public void SetPlayer(Player player) {
 		this.player = player;
 	}
-	public Room(byte [][] ids) {
 
-		tiles= new Tile[Ysize][Xsize];
-		
+	public Room(byte[][] ids) {
+
+		tiles = new Tile[Ysize][Xsize];
+
 		entities = new ArrayList<Enemy>();
-		
-		for(int i=0;i<Ysize;i++){
-			for(int j=0;j<Xsize;j++) {
-		        tiles[i][j] = new Tile(ids[i][j],j,i);
+
+		for (int i = 0; i < Ysize; i++) {
+			for (int j = 0; j < Xsize; j++) {
+				tiles[i][j] = new Tile(ids[i][j], j, i);
 			}
 		}
 	}
+
 	public Tile GetTile(int i, int j) {
 		return tiles[i][j];
 	}
-	
+
 	public void Render(Graphics g) {
-		
-		for(int i=0;i<Ysize;i++) {
-			for(int j=0;j<Xsize;j++) {
-				g.drawImage(Resources.TEXTURES.get(tiles[i][j].getID()), tiles[i][j].x, tiles[i][j].y, tiles[i][j].width, tiles[i][j].height, null);
+
+		for (int i = 0; i < Ysize; i++) {
+			for (int j = 0; j < Xsize; j++) {
+				g.drawImage(Resources.TEXTURES.get(tiles[i][j].getID()), tiles[i][j].x, tiles[i][j].y,
+						tiles[i][j].width, tiles[i][j].height, null);
 			}
 		}
-		for(Enemy entity: entities) {
-			if(entity.GetAlive())
-			entity.Render(g);
-	
+		for (Enemy entity : entities) {
+			if (entity.GetAlive())
+				entity.Render(g);
+
 		}
 	}
+
 	public void Loop() {
-		for(Enemy enemy : entities) {
-			if(enemy.GetAlive())
-			enemy.OnLoop();
-			
+		for (Enemy enemy : entities) {
+			if (enemy.GetAlive())
+				enemy.OnLoop();
+
 		}
 	}
+
 	public ArrayList<Enemy> GetEntities() {
 		return entities;
 	}
 
-	public Tile[][] GetTiles(){
+	public Tile[][] GetTiles() {
 		return tiles;
 	}
 }
