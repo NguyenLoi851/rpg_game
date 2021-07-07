@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/entity/AD.java=UTF-8
+encoding//src/entity/Entity.java=UTF-8
+encoding//src/entity/Ghost.java=UTF-8
+encoding//src/entity/Monster.java=UTF-8
+encoding//src/entity/Player.java=UTF-8
+encoding//src/game_state/DaoLyMenu.java=UTF-8
+encoding//src/game_state/GameStateManager.java=UTF-8
+encoding//src/game_state/IntroMenu.java=UTF-8
+encoding//src/game_state/MainMenu.java=UTF-8
+encoding//src/game_state/PlayingState.java=UTF-8
+encoding//src/game_world/Room.java=UTF-8
+encoding//src/game_world/Tile.java=UTF-8
+encoding//src/game_world/Vector.java=UTF-8
+encoding//src/game_world/World.java=UTF-8
